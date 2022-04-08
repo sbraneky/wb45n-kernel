@@ -12,5 +12,6 @@ config WLAN_VENDOR_LAIRD
 if WLAN_VENDOR_LAIRD
 
 source "drivers/net/wireless/laird/lrdmwl/Kconfig"
+source "drivers/net/wireless/laird/mwifiex/mxm_wifiex/wlan_src/Kconfig"
 
 endif # WLAN_VENDOR_LAIRD
