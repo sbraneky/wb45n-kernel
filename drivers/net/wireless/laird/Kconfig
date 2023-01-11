@@ -117,4 +117,34 @@ config LRD_MWIFIEX_WIFI_DIRECT_SUPPORT
 
 endif # LRD_MWIFIEX
 
+config LRD_WIFI_75
+	tristate "Laird Connectivity wireless support based for NXP iw61x chipsets"
+	depends on CFG80211
+	help
+		Select to build the Laird fork of the iw61x driver
+
+		If you want to compile the driver as a module (= code which can be
+		inserted in and removed from the running kernel whenever you want),
+		say M here and read <file:Documentation/kbuild/modules.txt>.  The
+		modules will be called moal and mlan.
+
+if LRD_WIFI_75
+
+#config LRD_WIFI_75_STA_SUPPORT
+#	bool "Include support for Wi-Fi Station "
+#	help
+#		Select to include support for Wi-Fi station mode.
+
+config LRD_WIFI_75_UAP_SUPPORT
+	bool "Include support for Wi-Fi micro AP "
+	help
+		Select to include support for Wi-Fi micro AP mode.
+
+config LRD_WIFI_75_WIFI_DIRECT_SUPPORT
+	bool "Include support for Wi-Fi Direct"
+	help
+		Select to include support for Wi-Fi direct mode.
+
+endif # LRD_WIFI_75
+
 endif # WLAN_VENDOR_LAIRD
